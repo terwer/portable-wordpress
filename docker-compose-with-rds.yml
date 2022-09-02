@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+   wordpress:
+     image: wordpress:6.0.2
+     ports:
+       - 8000:80
+     restart: "no"
+     environment:
+       WORDPRESS_DB_HOST: "${MYSQL_HOST}:${MYSQL_PORT}"
+       WORDPRESS_DB_NAME: "${MYSQL_DB_NAME}"
+       WORDPRESS_DB_USER: "${MYSQL_USERNAME}"
+       WORDPRESS_DB_PASSWORD: "${MYSQL_PASSWORD}"
+       # WORDPRESS_DEBUG: 1
+     volumes:
+      - ./wordpress:/var/www/html
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
