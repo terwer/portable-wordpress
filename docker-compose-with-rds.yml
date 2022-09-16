@@ -3,7 +3,8 @@ services:
    wordpress:
      image: wordpress:6.0.2
      ports:
-       - 80:80
+       - "80:80"
+       - "443:443"
      restart: "no"
      environment:
        WORDPRESS_DB_HOST: "${MYSQL_HOST}:${MYSQL_PORT}"
@@ -14,3 +15,4 @@ services:
      volumes:
       - ./wordpress:/var/www/html
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./ssl:/ssl
