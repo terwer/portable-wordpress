@@ -16,3 +16,5 @@ services:
       - ./wordpress:/var/www/html
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./ssl:/ssl
+      - ./ssl-conf/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf
+      - ./ssl-conf/000-default.conf:/etc/apache2/sites-available/000-default.conf
