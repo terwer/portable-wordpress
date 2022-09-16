@@ -3,7 +3,7 @@ services:
    wordpress:
      image: wordpress:6.0.2
      ports:
-       - 8000:80
+       - 80:80
      restart: "no"
      environment:
        WORDPRESS_DB_HOST: "${MYSQL_HOST}:${MYSQL_PORT}"
