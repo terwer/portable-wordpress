@@ -17,3 +17,8 @@
 # CMD ["/entrypoint.py"]
 # 因此，需要再次执行entrypoint.py
 # CMD ["bash", "/entrypoint.sh"]
+
+# 防止重建容器ssl没有生效
+RUN a2enmod ssl
+RUN ln -s /etc/apache2/sites-available/default-ssl.conf \
+    /etc/apache2/sites-enabled/default-ssl.conf
