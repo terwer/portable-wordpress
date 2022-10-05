@@ -22,3 +22,5 @@
 RUN a2enmod ssl
 RUN ln -s /etc/apache2/sites-available/default-ssl.conf \
     /etc/apache2/sites-enabled/default-ssl.conf
+RUN service apache2 restart
+RUN echo 'ssl config finished.'
