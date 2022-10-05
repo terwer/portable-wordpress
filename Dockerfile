@@ -19,8 +19,10 @@
 # CMD ["bash", "/entrypoint.sh"]
 
 # 防止重建容器ssl没有生效
-RUN a2enmod ssl
-RUN ln -s /etc/apache2/sites-available/default-ssl.conf \
-    /etc/apache2/sites-enabled/default-ssl.conf
-RUN service apache2 restart
-RUN echo 'ssl config finished.'
+# 下面的没有生效，暂时手动修改
+# 注意不要docker compose down，否则会失效
+# RUN a2enmod ssl
+# RUN ln -s /etc/apache2/sites-available/default-ssl.conf \
+#     /etc/apache2/sites-enabled/default-ssl.conf
+# RUN service apache2 restart
+# RUN echo 'ssl config finished.'
